@@ -2,7 +2,7 @@
 
 ##Contents
 
-- [Radians / Degrees](#Radians-&-Degrees)
+- [Radians / Degrees](#radians--degrees)
 - [Calculate side lengths](#calculate-side-lengths)
 - [Linear Distance 2 points](#linear-distance-2-points)
 - [Linear distance between 2 vectors](#Linear distance between 2 vectors)
