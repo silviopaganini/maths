@@ -1,6 +1,17 @@
 #Learning Maths again 
 
-#### Radians / Degrees
+##Contents
+
+- [Radians / Degrees](#Radians-&-Degrees)
+- [Calculate side lengths](#calculate-side-lengths)
+- [Linear Distance 2 points](#linear-distance-2-points)
+- [Linear distance between 2 vectors](#Linear distance between 2 vectors)
+- [Length of a vector (Magnitude)](#length-of-a-vector)
+- [Normalize vector](#normalize-vector)
+- [Dot product vectors](#dot-product-vectors)
+- [Finding angle (degrees and radians) between 2 points](#Finding angle (degrees and radians) between 2 points)
+
+#### Radians & Degrees
 
 ```js
 // JavaScript
@@ -122,7 +133,25 @@ vec3 v2 = vec2(5., 9., -5.);
 float dot = dot(v1, v2);
 ```
 
-#### Finding angle(degrees and radians) between vectors
+#### Finding angle (degrees and radians) between 2 points
+
+```js
+//Javascript
+var x = -3;
+var y = -2;
+var radians = Math.atan2(x, y);
+var degrees = radians * 180 / Math.PI;
+```
+
+```glsl
+//GLSL
+float x = -3.0;
+float y = -2.0;
+float radians = atan(x, y);
+float degrees = degrees(radians);
+```
+
+#### Finding angle (degrees and radians) between 2 vectors
 
 ```js
 // Javascript
