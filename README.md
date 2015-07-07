@@ -2,17 +2,18 @@
 
 #### Radians / Degrees
 
-```
+```js
 // JavaScript
 var angleInDegrees = 90;
 var radians = angleInDegrees * Math.PI / 180;
 var backToDegrees = radians * 180 / Math.PI;
+```
 
+```glsl
 // GLSL
 float angleInDegrees = 90.0;
 float r = radians(angleInDegrees);
 float angleInDegrees = degrees(r);
-
 ```
 
 ####Calculate side lengths
