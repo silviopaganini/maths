@@ -7,16 +7,18 @@
 - [Linear Distance 2 points](#linear-distance-2-points)
 - [Linear distance between 2 vectors](#linear-distance-between-2-vectors)
 - [Length of a vector](#length-of-a-vector)
+- [Add and substract vectors](#add-and-substract-vectors)
 - [Normalize vector](#normalize-vector)
 - [Dot product vectors](#dot-product-vectors)
 - [Finding angle between 2 points](#finding-angle-between-2-points)
 - [Finding angle between 2 vectors](#finding-angle-between-2-vectors)
+- [Cross Product](#cross-product)
 
 #### Radians & Degrees
 
 ```js
 // JavaScript
-var angleInDegrees = 90;
+var angleInDegrees = 45;
 var radians = angleInDegrees * Math.PI / 180;
 var backToDegrees = radians * 180 / Math.PI;
 ```
@@ -35,9 +37,10 @@ float angleInDegrees = degrees(r);
 // Javascript
 var hyp = 100;
 var angleDegrees = 45;
+var angleRadians = angleDegrees * Math.PI / 180;
 
-var opposite = Math.sin( (angleDegrees * Math.PI / 180) ) * hyp;
-var adjacent = Math.cos( (angleDegrees * Math.PI / 180) ) * hyp;
+var opposite = Math.sin( angleRadians ) * hyp;
+var adjacent = Math.cos( angleRadians ) * hyp;
 var tangent  = opposite / adjacent;
 ```
 
@@ -45,9 +48,10 @@ var tangent  = opposite / adjacent;
 // GLSL
 float hyp = 100.;
 float angleDegrees = 45.;
+float angleRadians = radians(angleDegrees);
 
-float opposite = sin(radians(angleDegrees)) * hyp;
-float adjacent = cos(radians(angleDegrees)) * hyp;
+float opposite = sin(angleRadians) * hyp;
+float adjacent = cos(angleRadians) * hyp;
 float tangent  = opposite / adjacent;
 
 ```
@@ -70,7 +74,7 @@ float distance = x2 — x1;
 
 ####Linear distance between 2 vectors
 
-######Hypotenuse = a² + b² = c²
+###### a² + b² = c²
 
 ```js
 // Javascript
@@ -88,14 +92,17 @@ float distance = distance(vec2(x1), vec2(x2));
 ```
 
 ####Length of a vector
-// a.k.a Magnitude
+###### a.k.a Magnitude 
+
 ```js
 // Javascript
+// 2D -> hypotenuse
 var v = {x: 4, y:-9};
 var length = Math.sqrt( (Math.pow(v.x, 2) + Math.pow(v.y, 2)) );
 
+// 3D
 var v = {x: 4, y:-9, z: 0.5};
-var length = Math.sqrt( (Math.pow(v.x, 2) + Math.pow(v.y, 2)) + Math.pow(v.z, 2)) );
+var length = Math.sqrt( (Math.pow(v.x, 2) + Math.pow(v.y, 2) + Math.pow(v.z, 2) ));
 ```
 
 ```glsl
@@ -104,19 +111,37 @@ vec2 v = vec2(1.0, 2.0);
 float l = length(v);
 ```
 
+####Add and substract vectors
+
+```js
+var v1 = {x: 2, y: 3};
+var v2 = {x: 2, y: -2};
+var addedVec = {x: v1.x + v2.x, y: v1.y + v2.y};
+var subVec = {x: v1.x - v2.x, y: v1.y - v2.y};
+```
+
 ####Normalize vector
 
 ```js
 // Javascript
+// 2D
 var v = {x: 4, y:-9};
 var length = Math.sqrt( (Math.pow(v.x, 2) + Math.pow(v.y,2)) );
 var n = {x: v.x / length, y: v.y / length};
+
+// 3D
+var v = {x: 4, y:-9, z: 3};
+var length = Math.sqrt( Math.pow(v.x, 2) + Math.pow(v.y,2) + Math.pow(v.z,2) );
+var n = {x: v.x / length, y: v.y / length, z: v.z / length};
 ```
 
 ```glsl
 // GLSL
 vec2 v = vec2(4.0, -9.0);
 vec2 n = normalize(v);
+
+vec3 v = vec3(4.0, -9.0, 3.0);
+vec3 n = normalize(v);
 ```
 
 ####Dot product vectors
@@ -176,4 +201,24 @@ float l2 = length(v2);
 
 float radians = acos(dot / (l1 * l2));
 float angle = degrees(radians);
+```
+
+#### Cross Product
+
+```js
+// Javascript
+var v1 = {x: 1, y: 2, z: 3};
+var v2 = {x: 3, y: 2, z: 1};
+var cross = {
+	x: v1.y*v2.z - v1.z*v2.y, 
+	y: v1.z*v2.x - v1.x*v2.z, 
+	z: v1.x*v2.y - v1.y*v2.x
+};
+
+```
+```glsl
+// GLSL
+vec3 v1 = vec3(1.0, 2.0, 3.0);
+vec3 v2 = vec3(2.0, 2.0, 1.0);
+vec3 cross = cross(v1, v2);
 ```
