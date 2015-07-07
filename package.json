@@ -1,0 +1,11 @@
+{
+  "name": "maths",
+  "version": "1.0.0",
+  "description": "learning maths again",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Silvio Paganini <s2paganini@gmail.com>",
+  "license": "ISC"
+}
