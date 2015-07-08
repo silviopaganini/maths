@@ -49,6 +49,7 @@ float phong(vec3 light, vec3 normal, vec3 eyeDirection, float shininess)
 ### Creating color
 
 ```glsl
+vec3 eyeDirection = normalize(vPosition);
 vec3 light = ambient + 
         diffuse * lambert(vNormal, lightDirection) + 
         specular * phong( 
