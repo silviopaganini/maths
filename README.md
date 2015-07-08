@@ -4,6 +4,7 @@
 
 - [Radians / Degrees](#radians--degrees)
 - [Calculate side lengths](#calculate-side-lengths)
+- [Rotate a 2D point](#rotate-a-2D-point)
 - [Linear Distance 2 points](#linear-distance-2-points)
 - [Linear distance between 2 vectors](#linear-distance-between-2-vectors)
 - [Length of a vector](#length-of-a-vector)
@@ -54,6 +55,35 @@ float opposite = sin(angleRadians) * hyp;
 float adjacent = cos(angleRadians) * hyp;
 float tangent  = opposite / adjacent;
 
+```
+
+#### Rotate a 2D point
+```js
+var vec2 = {x: 2, y: 3};
+
+function rotate2D(vector, angle)
+{
+	var theta = angle * Math.PI / 180; // radians
+	var matrix = [  Math.cos(theta),  Math.sin(theta), 
+					-Math.sin(theta), Math.cos(theta)
+					];
+					
+	return { 
+		x: matrix[0] * vec2.x + matrix[1] * vec2.y, 
+		y: matrix[2] * vec2.x + matrix[3] * vec2.y
+	};
+}
+
+```
+
+```glsl
+// GLSL
+vec2 rotate2D(vec2 position, float theta)
+{
+    // theta in radians
+    mat2 m = mat2( cos(theta), sin(theta), -sin(theta), cos(theta) );
+    return m * position;
+}
 ```
 
 ####Linear Distance 2 points
