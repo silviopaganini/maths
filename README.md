@@ -7,7 +7,7 @@ thanks to everyone who created the [Shader School](https://www.npmjs.com/package
 
 - [Radians / Degrees](#radians--degrees)
 - [Calculate side lengths](#calculate-side-lengths)
-- [Rotate a 2D point](#rotate-a-2D-point)
+- [Rotate a 2D point](#rotate-a-2d-point)
 - [Linear Distance 2 points](#linear-distance-2-points)
 - [Linear distance between 2 vectors](#linear-distance-between-2-vectors)
 - [Length of a vector](#length-of-a-vector)
