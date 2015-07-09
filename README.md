@@ -1,6 +1,9 @@
 #Learning Maths again 
 
 ###[Useful GLSL Functions](https://github.com/silviopaganini/maths/blob/master/GLSL.md)
+
+###[Basic light shading](https://github.com/silviopaganini/maths/blob/master/Lighting.md)
+
 thanks to everyone who created the [Shader School](https://www.npmjs.com/package/shader-school) =) 
 
 ##Contents
