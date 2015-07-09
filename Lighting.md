@@ -1,5 +1,8 @@
 # Lighting
 
+thanks to everyone who created the [Shader School
+](https://www.npmjs.com/package/shader-school) =) 
+
 ## Basic vertex for Lambert and Phong
 
 ```glsl

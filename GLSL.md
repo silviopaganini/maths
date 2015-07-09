@@ -1,5 +1,7 @@
 #Useful GLSL Functions
 
+thanks to everyone who created the [Shader School](https://www.npmjs.com/package/shader-school) =) 
+
 ### world normal
 ```glsl
 varying vec3 vNormal;

@@ -24,7 +24,7 @@ Using homogeneous coordinates
 ]
 ```
 
-###Rotation
+<!-- ###Rotation
 
 ```
 [ 
@@ -33,4 +33,4 @@ Using homogeneous coordinates
   0, 0, rot.z, 0,
   0, 0, 0, 1
 ]
-```
+``` -->

@@ -1,5 +1,8 @@
 #Learning Maths again 
 
+###[Useful GLSL Functions](https://github.com/silviopaganini/maths/blob/master/GLSL.md)
+thanks to everyone who created the [Shader School](https://www.npmjs.com/package/shader-school) =) 
+
 ##Contents
 
 - [Radians / Degrees](#radians--degrees)
