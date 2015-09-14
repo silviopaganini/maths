@@ -66,6 +66,7 @@ float tangent  = opposite / adjacent;
 #### Rotate a 2D point
 ```js
 var vec2 = {x: 2, y: 3};
+var rotatedVector = rotate2D(vec2, angle);
 
 function rotate2D(vector, angle)
 {
@@ -75,8 +76,8 @@ function rotate2D(vector, angle)
 					];
 					
 	return { 
-		x: matrix[0] * vec2.x + matrix[1] * vec2.y, 
-		y: matrix[2] * vec2.x + matrix[3] * vec2.y
+		x: matrix[0] * vector.x + matrix[1] * vector.y, 
+		y: matrix[2] * vector.x + matrix[3] * vector.y
 	};
 }
 
