@@ -1,4 +1,4 @@
-#Useful GLSL Functions
+# Useful GLSL Functions
 
 thanks to everyone who created the [Shader School](https://www.npmjs.com/package/shader-school) =) 
 
@@ -78,7 +78,7 @@ bool inCircle(vec2 point, vec2 center, float radius) {
     return length(point) <= radius;
 }
 ```
-###power matrices
+### power matrices
 
 ```glsl
 mat2 matrixPower(highp mat2 m, int n) {

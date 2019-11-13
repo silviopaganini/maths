@@ -1,12 +1,12 @@
-#Learning Maths again 
+# Learning Maths again 
 
-###[Useful GLSL Functions](https://github.com/silviopaganini/maths/blob/master/GLSL.md)
+### [Useful GLSL Functions](https://github.com/silviopaganini/maths/blob/master/GLSL.md)
 
-###[Basic light shading](https://github.com/silviopaganini/maths/blob/master/Lighting.md)
+### [Basic light shading](https://github.com/silviopaganini/maths/blob/master/Lighting.md)
 
 thanks to everyone who created the [Shader School](https://www.npmjs.com/package/shader-school) =) 
 
-##Contents
+## Contents
 
 - [Radians / Degrees](#radians--degrees)
 - [Calculate side lengths](#calculate-side-lengths)
@@ -37,7 +37,7 @@ float r = radians(angleInDegrees);
 float angleInDegrees = degrees(r);
 ```
 
-####Calculate side lengths
+#### Calculate side lengths
 ##### SOHCAHTOA
 
 ```js
@@ -93,7 +93,7 @@ vec2 rotate2D(vec2 position, float theta)
 }
 ```
 
-####Linear Distance 2 points
+#### Linear Distance 2 points
 
 ```js
 // JavaScript
@@ -109,7 +109,7 @@ float x2 = 5.0;
 float distance = x2 — x1;
 ```
 
-####Linear distance between 2 vectors
+#### Linear distance between 2 vectors
 
 ###### a² + b² = c²
 
@@ -128,7 +128,7 @@ vec2 x2 = vec2(2.0, 1.0);
 float distance = distance(vec2(x1), vec2(x2));
 ```
 
-####Length of a vector
+#### Length of a vector
 ###### a.k.a Magnitude 
 
 ```js
@@ -148,7 +148,7 @@ vec2 v = vec2(1.0, 2.0);
 float l = length(v);
 ```
 
-####Add and substract vectors
+#### Add and substract vectors
 
 ```js
 var v1 = {x: 2, y: 3};
@@ -157,7 +157,7 @@ var addedVec = {x: v1.x + v2.x, y: v1.y + v2.y};
 var subVec = {x: v1.x - v2.x, y: v1.y - v2.y};
 ```
 
-####Normalize vector
+#### Normalize vector
 
 ```js
 // Javascript
@@ -181,7 +181,7 @@ vec3 v = vec3(4.0, -9.0, 3.0);
 vec3 n = normalize(v);
 ```
 
-####Dot product vectors
+#### Dot product vectors
 
 ```js
 // Javascript
@@ -258,4 +258,24 @@ var cross = {
 vec3 v1 = vec3(1.0, 2.0, 3.0);
 vec3 v2 = vec3(2.0, 2.0, 1.0);
 vec3 cross = cross(v1, v2);
+```
+
+#### Projection of point B over A
+
+
+![](data:image/gif;base64,R0lGODdhegBFAIAAAAAAAP///ywAAAAAegBFAAAC/oyPqcvtD6OctEqAgd28+5ll30iWYBia6mqiLgvHmyvK9v3QGM73B+0L4l4aoXFVTB2XpaJB5GRKK9HnlLmzVBPb6y1L6XqxSogYcR6zsuBGWm1kv98/OE/uoNuDeIa+vmfTp/AX2IPip2WItdjIxVHoSBIpuUT5WPmV2XhJuBnT+XnXJKoSWipoijpyugrTmug6IzsGS0sKenuhO2Wbw5sHzDgk7Fkc5+MbqHwcJsT81eZmWuaKOE0NhJapzaXzDR5+za2DJn6Onq6+zo4uCF76PdQd/3JXvTp+D1zTfOgP0FA/VJGksdJg0F/CSdAgBeiHMAnEMBFbDLTkRCIgUisPKeKDVLHXto4bSRbccXFGSClRkozkePKHr4/IALUcGfNJwys3SXKESVHnzl4Zf/o06U2MPWERi5oDo3QByqE8HSYNiE0RTqyxghJayDWshwIAOw==)
+
+```js
+// Javascript
+// ||b -> a|| 
+var b = {x: 1, y: 3};
+var theta = 45;
+var projection = normalize(b) * Math.cos(theta); // see Normalize Vector
+```
+
+```glsl
+// GLSL
+vec2 b = vec2(1, 3);
+float theta = 45;
+float projection = normalize(b) * cos(theta);
 ```
